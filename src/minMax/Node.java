@@ -112,9 +112,7 @@ public class Node{
                 if(botScore<oScore){
                     e=-1;
                 }else{
-                    if(botScore==oScore){
-                        e=-0.1;
-                    }
+                    e=-0.1;
                 }
             }
         }
@@ -196,11 +194,7 @@ public class Node{
 
     public boolean doubleCross(){
         ArrayList<ArrayList<Vertex>> temp = checkBox(move,matrix);
-        if(temp!=null&&temp.size()>1){
-            return true;
-        }else{
-            return false;
-        }
+        return temp != null && temp.size() > 1;
     }
 
     static ArrayList<ArrayList<Integer>> loopVisited;
@@ -436,7 +430,7 @@ public class Node{
                 int bottom = matrix[((h+1)*Graph.getWidth())+w-1][((h+1)*Graph.getWidth())+w];
                 //sideways
                 if(top==2&&bottom==2&&left==1&&right==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -446,7 +440,7 @@ public class Node{
                 }
                 //bottomleft
                 if(left==2&&bottom==2&&right==1&&top==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -456,7 +450,7 @@ public class Node{
                 }
                 //topleft
                 if(top==2&&left==2&&bottom==1&&right==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -512,7 +506,7 @@ public class Node{
                 int bottom = matrix[((h+1)*Graph.getWidth())+w-1][((h+1)*Graph.getWidth())+w];
                 //sideways
                 if(top==2&&bottom==2&&left==1&&right==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -522,7 +516,7 @@ public class Node{
                 }
                 //bottomleft
                 if(left==2&&bottom==2&&right==1&&top==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -532,7 +526,7 @@ public class Node{
                 }
                 //topleft
                 if(top==2&&left==2&&bottom==1&&right==1){
-                    if(w>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h).get(w-1)==2){
                             return num;
                         }
@@ -549,7 +543,7 @@ public class Node{
                 int bottom = matrix[((h) * Graph.getWidth()) + w + 1][((h) * Graph.getWidth()) + w];
                 //longways
                 if (top == 1 && bottom == 1 && left == 2 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -559,7 +553,7 @@ public class Node{
                 }
                 //topright
                 if (left == 2 && bottom == 1 && right == 1 && top == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -569,7 +563,7 @@ public class Node{
                 }
                 //topleft
                 if (top == 2 && left == 1 && bottom == 1 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -625,7 +619,7 @@ public class Node{
                 int bottom = matrix[((h) * Graph.getWidth()) + w + 1][((h) * Graph.getWidth()) + w];
                 //longways
                 if (top == 1 && bottom == 1 && left == 2 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -635,7 +629,7 @@ public class Node{
                 }
                 //topright
                 if (left == 2 && bottom == 1 && right == 1 && top == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -645,7 +639,7 @@ public class Node{
                 }
                 //topleft
                 if (top == 2 && left == 1 && bottom == 1 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -664,7 +658,7 @@ public class Node{
                 int bottom = matrix[((h) * Graph.getWidth()) + w + 1][((h) * Graph.getWidth()) + w];
                 //longways
                 if (top == 1 && bottom == 1 && left == 2 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -674,7 +668,7 @@ public class Node{
                 }
                 //topright
                 if (left == 2 && bottom == 1 && right == 1 && top == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -684,7 +678,7 @@ public class Node{
                 }
                 //topleft
                 if (top == 2 && left == 1 && bottom == 1 && right == 2) {
-                    if(h>0&&num!=2){
+                    if(num != 2){
                         if(visited.get(h-1).get(w)==2){
                             return num;
                         }
@@ -739,36 +733,35 @@ public class Node{
     public ArrayList<ELine> checkFor3s(){
         ArrayList<ELine> av = new ArrayList<>();
         // goes through each availableLine
-        for(int q=0;q<availLines.size();q++){
-            ELine edge = availLines.get(q);
-            boolean noBox=true;
-            if(!edge.getHorizontal()){
-                int leftBox=0;
-                int rightBox=0;
-                if(edge.vertices.get(0).getRightVertex()!=null){
-                    rightBox = matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID()+1]+matrix[edge.vertices.get(0).getID()+1][edge.vertices.get(1).getID()+1]+matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID()+1];
+        for (ELine edge : availLines) {
+            boolean noBox = true;
+            if (!edge.getHorizontal()) {
+                int leftBox = 0;
+                int rightBox = 0;
+                if (edge.vertices.get(0).getRightVertex() != null) {
+                    rightBox = matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID() + 1] + matrix[edge.vertices.get(0).getID() + 1][edge.vertices.get(1).getID() + 1] + matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID() + 1];
                 }
-                if(edge.vertices.get(0).getLeftVertex()!=null){
-                    leftBox= matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID()-1]+matrix[edge.vertices.get(0).getID()-1][edge.vertices.get(1).getID()-1]+matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID()-1];
+                if (edge.vertices.get(0).getLeftVertex() != null) {
+                    leftBox = matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID() - 1] + matrix[edge.vertices.get(0).getID() - 1][edge.vertices.get(1).getID() - 1] + matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID() - 1];
                 }
-                if(leftBox==5||rightBox==5){
-                    noBox=false;
+                if (leftBox == 5 || rightBox == 5) {
+                    noBox = false;
                 }
-            }else{
+            } else {
                 // does the same but for horizontal edges
-                int downBox=0;
-                int upBox=0;
-                if(edge.vertices.get(0).getDownVertex()!=null){
-                    downBox= matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID()+ Graph.getWidth()]+matrix[edge.vertices.get(0).getID()+Graph.getWidth()][edge.vertices.get(1).getID()+Graph.getWidth()]+matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID()+Graph.getWidth()];
+                int downBox = 0;
+                int upBox = 0;
+                if (edge.vertices.get(0).getDownVertex() != null) {
+                    downBox = matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID() + Graph.getWidth()] + matrix[edge.vertices.get(0).getID() + Graph.getWidth()][edge.vertices.get(1).getID() + Graph.getWidth()] + matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID() + Graph.getWidth()];
                 }
-                if(edge.vertices.get(0).getUpVertex()!=null){
-                    upBox= matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID()-Graph.getWidth()]+matrix[edge.vertices.get(0).getID()-Graph.getWidth()][edge.vertices.get(1).getID()-Graph.getWidth()]+matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID()-Graph.getWidth()];
+                if (edge.vertices.get(0).getUpVertex() != null) {
+                    upBox = matrix[edge.vertices.get(0).getID()][edge.vertices.get(0).getID() - Graph.getWidth()] + matrix[edge.vertices.get(0).getID() - Graph.getWidth()][edge.vertices.get(1).getID() - Graph.getWidth()] + matrix[edge.vertices.get(1).getID()][edge.vertices.get(1).getID() - Graph.getWidth()];
                 }
-                if(upBox==5||downBox==5){
-                    noBox=false;
+                if (upBox == 5 || downBox == 5) {
+                    noBox = false;
                 }
             }
-            if(noBox){
+            if (noBox) {
                 // if the line doesn't create a box it adds the index from availableLines to a new arrayList, av
                 av.add(edge);
             }
@@ -1192,18 +1185,12 @@ public class Node{
     public static int[][] matrixCopy(int[][] m) {
         int[][] newMatrix = new int[m.length][m[0].length];
         for (int i = 0; i < m.length; i++) {
-            for (int j = 0; j < m[0].length; j++) {
-                newMatrix[i][j] = m[i][j];
-            }
+            System.arraycopy(m[i], 0, newMatrix[i], 0, m[0].length);
         }
         return newMatrix;
     }
     public static ArrayList<ELine> avCopy(ArrayList<ELine> av){
-        ArrayList<ELine> temp = new ArrayList<>();
-        for(ELine b:av){
-            temp.add(b);
-        }
-        return temp;
+        return new ArrayList<>(av);
     }
 
     Node performMove(ELine line) {
