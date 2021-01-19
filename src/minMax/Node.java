@@ -32,16 +32,12 @@ public class Node{
     boolean doubleCross;
     public ELine move;
 
-    Node dummyTurn;
 
 
 
     public String toString(){
 
         String toReturn = "";
-        if(dummyTurn!=null){
-            toReturn+="DUMMY: ";
-        }
         if(move!=null){
             toReturn+="move: "+move.toString()+'\n';
         }
@@ -1191,22 +1187,8 @@ public class Node{
         terminal=t;
         this.bonusTurn=bonusTurn;
         this.move=move;
-        dummyTurn=null;
         this.doubleCross =dc;
     }
-    public Node(Node dummy){
-        this.dummyTurn=dummy;
-        botTurn=!dummyTurn.botTurn;
-        matrix=dummyTurn.matrix;
-        botScore=dummyTurn.botScore;
-        oScore=dummyTurn.oScore;
-        availLines= dummyTurn.availLines;
-        terminal=false;
-        bonusTurn=false;
-        move=dummyTurn.move;
-        this.doubleCross=false;
-    }
-
     public static int[][] matrixCopy(int[][] m) {
         int[][] newMatrix = new int[m.length][m[0].length];
         for (int i = 0; i < m.length; i++) {
